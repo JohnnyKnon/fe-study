@@ -40,6 +40,19 @@ npm과 다르게 각 패키지가 버전마다 하나의 zip Archive 파일만 �
 압축파일로 관리하기 때문에 효율적인 디스크 용량 확보가능
 의존성을 호이스팅 하지않음, package.json 에 명시된 의존성에만
 
+# JsonServer 를 사용합니다.
+
+해당 모바일 청첩장에서는 JsonServer를 사용합니다.
+
+## JsonServer 란?
+
+Json Server는 Json 파일을 이용하여 RestAPI 서버를 빠르고 간단하게 생성하기 위한 도구
+Json Server 를 이용하면 JSON 파일을 데이터베이스 처럼 동작하게 할 수 있고 HTTP 메서드를 활용하여 데이터에 접근하고 수정할 수 있는
+API를 만들 수 있습니다.
+
+[Json Server Github]
+https://github.com/typicode/json-server
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
