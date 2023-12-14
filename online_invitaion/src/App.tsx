@@ -3,7 +3,10 @@ import classNames from 'classnames/bind'
 
 import styles from './App.module.scss'
 
-import FullScreenMessage from './components/shared/FullScreenMessage'
+import FullScreenMessage from '@shared/FullScreenMessage'
+
+import Heading from '@components/sections/Heading'
+import Video from '@components/sections/Video'
 
 const cx = classNames.bind(styles)
 
@@ -52,7 +55,13 @@ function App() {
     return <FullScreenMessage type="error" />
   }
 
-  return <div className={cx('container')}>{JSON.stringify(wedding)}</div>
+  return (
+    <div className={cx('container')}>
+      <Heading />
+      <Video />
+      {JSON.stringify(wedding)}
+    </div>
+  )
 }
 
 export default App

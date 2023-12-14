@@ -3,8 +3,17 @@ import styles from './Section.module.scss'
 
 const cx = classNames.bind(styles)
 
-function Section({ children }: { children: React.ReactNode }) {
-  return <section className={cx('container')}>{children}</section>
+// className을 받아와서 cx는 Array로도 값을 넘길 수 있기 때문에 불러와서 바로 넣어주면됨.
+// MEMO: 하단 props 부분은 추후 interface로 나눠도 좋아보임
+
+function Section({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  return <section className={cx(['container', className])}>{children}</section>
 }
 
 export default Section
