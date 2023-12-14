@@ -44,7 +44,7 @@ function App() {
       })
   }, [])
 
-  if (loading === false) {
+  if (loading) {
     return <FullScreenMessage type="loading" />
   }
 
