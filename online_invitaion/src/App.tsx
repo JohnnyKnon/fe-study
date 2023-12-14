@@ -10,6 +10,8 @@ function App() {
   const [wedding, setWedding] = useState(null)
   // 현재 로딩중인지 아닌지 체크하기 위한 state
   const [loading, setLoading] = useState(false)
+  // 에러 대응을 위한 state
+  const [error, setError] = useState(false)
 
   // 1. wedding 데이터 호출 ([]가 비어있기 마운트 될때만 실행 (처음만실행))
   useEffect(() => {
@@ -32,12 +34,22 @@ function App() {
       .catch((e) => {
         // 에러출력
         console.log(e)
+        setError(true) // 상태값 true로 변경되고 에러임을 알림
+      })
+      .finally(() => {
+        // 성공/실패 여부 없이 마지막에 실행되는 함수 finally
+        setLoading(false) // 로딩 리셋
       })
   }, [])
 
   if (loading) {
     return <div>Loading...</div>
   }
+
+  if (error) {
+    return <div>Error!</div>
+  }
+
   return <div className={cx('container')}>{JSON.stringify(wedding)}</div>
 }
 
