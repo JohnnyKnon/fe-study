@@ -8,19 +8,36 @@ const cx = classNames.bind(styles)
 function App() {
   // wedding 데이터 useState
   const [wedding, setWedding] = useState(null)
+  // 현재 로딩중인지 아닌지 체크하기 위한 state
+  const [loading, setLoading] = useState(false)
 
   // 1. wedding 데이터 호출 ([]가 비어있기 마운트 될때만 실행 (처음만실행))
   useEffect(() => {
+    setLoading(true) // 로딩 시작
     // callback, promise, async/await
-    fetch('http://localhost:8888/wedding')
+    fetch('http://localhost:8888/wedding22')
       .then((response) => {
+        // 에러처리
+        if (response.ok === false) {
+          throw new Error('청첩장 정보를 불러오지 못했습니다.')
+        }
+        // 정상작동시
         return response.json()
       })
       .then((data) => {
         // wedding state에 값넣어주기
         setWedding(data)
+        setLoading(false) // 로딩 끝
+      })
+      .catch((e) => {
+        // 에러출력
+        console.log(e)
       })
   }, [])
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
   return <div className={cx('container')}>{JSON.stringify(wedding)}</div>
 }
 
