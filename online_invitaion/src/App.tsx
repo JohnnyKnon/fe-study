@@ -3,6 +3,8 @@ import classNames from 'classnames/bind'
 
 import styles from './App.module.scss'
 
+import FullScreenMessage from './components/shared/FullScreenMessage'
+
 const cx = classNames.bind(styles)
 
 function App() {
@@ -17,7 +19,7 @@ function App() {
   useEffect(() => {
     setLoading(true) // 로딩 시작
     // callback, promise, async/await
-    fetch('http://localhost:8888/wedding22')
+    fetch('http://localhost:8888/wedding')
       .then((response) => {
         // 에러처리
         if (response.ok === false) {
@@ -42,12 +44,12 @@ function App() {
       })
   }, [])
 
-  if (loading) {
-    return <div>Loading...</div>
+  if (loading === false) {
+    return <FullScreenMessage type="loading" />
   }
 
   if (error) {
-    return <div>Error!</div>
+    return <FullScreenMessage type="error" />
   }
 
   return <div className={cx('container')}>{JSON.stringify(wedding)}</div>
