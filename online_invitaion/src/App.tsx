@@ -8,11 +8,13 @@ import FullScreenMessage from '@shared/FullScreenMessage'
 import Heading from '@components/sections/Heading'
 import Video from '@components/sections/Video'
 
+import { Wedding } from '@models/wedding'
+
 const cx = classNames.bind(styles)
 
 function App() {
   // wedding 데이터 useState
-  const [wedding, setWedding] = useState(null)
+  const [wedding, setWedding] = useState<Wedding | null>(null)
   // 현재 로딩중인지 아닌지 체크하기 위한 state
   const [loading, setLoading] = useState(false)
   // 에러 대응을 위한 state
@@ -47,17 +49,26 @@ function App() {
       })
   }, [])
 
+  // 로딩중일때 Loading UI 호출
   if (loading) {
     return <FullScreenMessage type="loading" />
   }
 
+  // 문제가 발생했을 경우 Error UI 호출
   if (error) {
     return <FullScreenMessage type="error" />
   }
 
+  // 청첩장 데이터가 없을 경우 null 리턴
+  if (wedding == null) {
+    return null
+  }
+
+  const { date } = wedding
+
   return (
     <div className={cx('container')}>
-      <Heading />
+      <Heading date={date} />
       <Video />
       {JSON.stringify(wedding)}
     </div>
