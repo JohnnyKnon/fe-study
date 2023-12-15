@@ -20,7 +20,12 @@
             position: absolute;
             object-fit: cover;
             border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease-in-out;
 
+            &:hover{
+                filter: brightness(60%);
+            }
         }
     }
 }
