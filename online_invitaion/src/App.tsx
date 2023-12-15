@@ -65,13 +65,14 @@ function App() {
     return null
   }
 
-  const { date } = wedding
+  // 청첩장 데이터 뽑아서 넣기 위한 코드
+  const { date, galleryImages } = wedding
 
   return (
     <div className={cx('container')}>
       <Heading date={date} />
       <Video />
-      <ImageGallery />
+      <ImageGallery images={galleryImages} />
       {JSON.stringify(wedding)}
     </div>
   )
