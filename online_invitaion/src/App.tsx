@@ -94,7 +94,7 @@ function App() {
       <Invitation message={invitation} />
       <ImageGallery images={galleryImages} />
       <Calendar date={date} />
-      <Map />
+      <Map location={location} />
       {JSON.stringify(wedding)}
     </div>
   )

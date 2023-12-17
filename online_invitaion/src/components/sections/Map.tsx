@@ -2,6 +2,7 @@ import classNames from 'classnames/bind'
 import Section from '@shared/Section'
 import styles from './Map.module.scss'
 import { useEffect, useRef } from 'react'
+import { Location } from '@models/wedding'
 
 const cx = classNames.bind(styles)
 
@@ -11,7 +12,7 @@ declare global {
   }
 }
 
-function Map() {
+function Map({ location }: { location: Location }) {
   const mapContainer = useRef(null)
 
   // script 태그를 비동기적으로 호출하기 위한 코드 autoload가 비동기 sync가 어긋남을 직접 설정하기 위해서 false
@@ -25,7 +26,10 @@ function Map() {
     // 비동기식으로 불러오기 때문에 onload (load할 수 있는 시점에서 load를 시킬 수 있게 작성함)
     script.onload = () => {
       window.kakao.maps.load(() => {
-        const position = new window.kakao.maps.LatLng(dsds, dsdsd)
+        const position = new window.kakao.maps.LatLng(
+          location.lat,
+          location.lng,
+        )
 
         const options = {
           center: position,
@@ -42,11 +46,52 @@ function Map() {
     }
   }, [])
   return (
-    <Section>
+    <Section
+      title={
+        <div className={cx('wrap-header')}>
+          <span className={cx('txt-title')}>오시는길</span>
+          <span className={cx('txt-subtitle')}>{location.name}</span>
+          <span className={cx('txt-subtitle')}>{location.address}</span>
+        </div>
+      }
+    >
+      <div className={cx('wrap-map')}>
+        <div className={cx('map')} ref={mapContainer}></div>
+        <a
+          className={cx('btn-find-way')}
+          href={location.link}
+          target="_blank"
+          rel="noreferrer"
+        >
+          길찾기
+        </a>
+      </div>
+
       <div>
-        <div ref={mapContainer}></div>
+        <WayToCome label="버스" list={location.waytocome.bus} />
+        <WayToCome label="지하철" list={location.waytocome.metro} />
       </div>
     </Section>
+  )
+}
+
+// 찾아오는 길 컴포넌트
+function WayToCome({
+  label,
+  list,
+}: {
+  label: React.ReactNode
+  list: string[]
+}) {
+  return (
+    <div className={cx('wrap-waytocome')}>
+      <div className={cx('txt-label')}>{label}</div>
+      <ul>
+        {list.map((waytocome, idx) => (
+          <li key={idx}>{waytocome}</li>
+        ))}
+      </ul>
+    </div>
   )
 }
 
