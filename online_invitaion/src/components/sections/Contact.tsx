@@ -64,15 +64,15 @@ function ContactInfo({ name, account, phoneNumber }: Person) {
       {/* 버튼들 */}
       <ul className={cx('wrap-buttons')}>
         <li>
-          <a className={cx('wrap-button')} href={`tel: ${phoneNumber}`}>
+          <a className={cx('button')} href={`tel: ${phoneNumber}`}>
             전화
           </a>
         </li>
         <li>
-          <button className={cx('wrap-button')}>복사</button>
+          <button className={cx('button')}>복사</button>
         </li>
         {account.kakaopayLink != null ? (
-          <li className={cx('wrap-button')}>
+          <li className={cx('button')}>
             <a href={account.kakaopayLink} target="_blank" rel="noreferrer">
               송금
             </a>
