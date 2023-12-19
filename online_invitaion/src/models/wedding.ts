@@ -32,7 +32,7 @@ export interface Location {
 export interface Account {
   bankName: string
   accountNumber: string
-  kakaopayLink: string
+  kakaopayLink?: string
 }
 
 //신부/신랑/부모님과 같이 주요인물 타입
