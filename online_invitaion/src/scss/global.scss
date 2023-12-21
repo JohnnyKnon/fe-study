@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+@import url("./reset.scss"); // 리셋 css
+@import url("./font.scss"); // 폰트불러오기
+
+:root{
+    --red: #ea7664;
+    --black: #544f4f;
+    --brown: #89757a;
+    --beige: #f6f5f5;
+}
+
+
+body{
+    font-family: 'NanumGeumEunBoHwa';
+}
