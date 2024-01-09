@@ -99,7 +99,6 @@ function App() {
       <Map location={location} />
       <Contact groom={groom} bride={bride} />
       <Share groomName={groom.name} brideName={bride.name} date={date} />
-      {JSON.stringify(wedding)}
     </div>
   )
 }
