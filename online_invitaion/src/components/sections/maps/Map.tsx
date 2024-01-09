@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind'
-import Section from '@shared/Section'
+import Section from '@/components/shared/sections/Section'
 import styles from './Map.module.scss'
 import { useEffect, useRef } from 'react'
 import { Location } from '@models/wedding'

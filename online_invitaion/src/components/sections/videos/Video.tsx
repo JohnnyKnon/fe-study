@@ -2,7 +2,7 @@ import classNames from 'classnames/bind'
 import styles from './Video.module.scss'
 
 // 공통 섹션 디자인 불러오기
-import Section from '@shared/Section'
+import Section from '@/components/shared/sections/Section'
 
 const cx = classNames.bind(styles)
 

@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind'
-import Dimmed from './Dimmed'
+import Dimmed from '../dimmeds/Dimmed'
 import styles from './Modal.module.scss'
 
 const cx = classNames.bind(styles)

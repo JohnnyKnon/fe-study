@@ -1,5 +1,5 @@
 import classNames from 'classnames/bind'
-import Section from '@shared/Section'
+import Section from '@/components/shared/sections/Section'
 import styles from './Share.module.scss'
 import { useEffect } from 'react'
 import { parseISO, format } from 'date-fns'

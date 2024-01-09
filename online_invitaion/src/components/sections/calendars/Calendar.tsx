@@ -1,7 +1,7 @@
 import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
 import classNames from 'classnames/bind'
-import Section from '@shared/Section'
+import Section from '@/components/shared/sections/Section'
 import { DayPicker } from 'react-day-picker'
 
 import 'react-day-picker/dist/style.css'

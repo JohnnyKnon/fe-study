@@ -1,7 +1,7 @@
 import { useContext, createContext, ComponentProps, useState } from 'react'
 import { createPortal } from 'react-dom'
 
-import Modal from '@shared/Modal'
+import Modal from '@/components/shared/modals/Modal'
 
 // 모달 컴포넌트의 props 타입 추출
 type ModalProps = ComponentProps<typeof Modal>

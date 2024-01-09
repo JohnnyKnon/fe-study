@@ -4,7 +4,7 @@ import 'swiper/css'
 import classNames from 'classnames/bind'
 import styles from './ImageViewer.module.scss'
 import './swiper.css'
-import Dimmed from '@shared/Dimmed'
+import Dimmed from '@/components/shared/dimmeds/Dimmed'
 
 const cx = classNames.bind(styles)
 

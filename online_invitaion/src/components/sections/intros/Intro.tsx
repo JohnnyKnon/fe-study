@@ -3,8 +3,8 @@ import styles from './Intro.module.scss'
 import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
 
-import Section from '@shared/Section'
-import Text from '@shared/Text'
+import Section from '@/components/shared/sections/Section'
+import Text from '@/components/shared/textFormat/Text'
 
 const cx = classNames.bind(styles)
 
