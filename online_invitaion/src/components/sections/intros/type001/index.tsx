@@ -4,7 +4,7 @@ import { parseISO, format } from 'date-fns'
 import { ko } from 'date-fns/locale'
 
 import Section from '@/components/shared/sections/Section'
-import Text from '@/components/shared/textFormat/Text'
+import Text from '@/components/shared/formats/Text'
 
 const cx = classNames.bind(styles)
 
