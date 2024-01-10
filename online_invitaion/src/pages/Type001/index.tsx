@@ -43,7 +43,7 @@ function Type001({ wedding }: { wedding: Wedding }) {
       <Invitation message={invitation} />
       <ImageGallery images={galleryImages} />
       <Calendar date={date} />
-      <Map location={location} />
+      <Map location={location} type="Type001" />
       <Contact groom={groom} bride={bride} />
       <Share groomName={groom.name} brideName={bride.name} date={date} />
     </div>
