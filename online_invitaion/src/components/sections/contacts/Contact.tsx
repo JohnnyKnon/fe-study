@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind'
 import Section from '@/components/shared/sections/Section'
 import styles from './Contact.module.scss'
-import Accordion from '../../shared/accordions/Accordion'
+import Accordion from '@shared/accordions/Accordion'
 import { Person, Wedding } from '@/models/invitation'
 import { CopyToClipboard } from 'react-copy-to-clipboard'
 

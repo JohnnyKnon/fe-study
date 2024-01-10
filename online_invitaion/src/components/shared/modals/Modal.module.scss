@@ -1,8 +1,8 @@
 // 변수
 @import "@scss/variable.scss";
 
-// 모달 전체 wrapper
-.wrap-modal{
+// Type001 모달 전체 wrapper
+.Type001-wrap-modal{
     position: absolute;
     left: 50%;
     top: 50%;
@@ -13,15 +13,15 @@
     z-index: $modal-zindex;
 
     // 타이틀&컨텐츠 영역 wrapper
-    .wrap-body{
+    .Type001-wrap-body{
         width: 320px;
 
         //컨텐츠 영역
-        .wrap-content{
+        .Type001-wrap-content{
             padding: 18px;
 
             // 타이틀
-            .txt-title{
+            .Type001-txt-title{
                 font-size: 20px;
                 font-weight: bold;
                 margin-bottom: 18px;
@@ -29,7 +29,7 @@
         }
 
         // 버튼 wrapper
-        .wrap-buttons{
+        .Type001-wrap-buttons{
             display: flex;
 
             // 버튼 전체 스타일링
