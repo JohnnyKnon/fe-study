@@ -1,39 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import classNames from 'classnames/bind'
-
-import styles from './App.module.scss'
 
 // 공통적으로 들어가는 풀스크린메세지
 import FullScreenMessage from '@shared/commons/FullScreenMessage'
-
-// 타입
-import { Wedding } from '@models/wedding'
-
-// 컴포넌트
-import Heading from '@components/sections/headers/Heading' // 상단 헤딩
-import Video from '@components/sections/videos/Video' // 비디오 섹션
-import Intro from '@components/sections/intros/Intro' // 상단 간략 소개글
-import Invitation from '@components/sections/contents/Invitation' // 초대글
-import ImageGallery from '@components/sections/imageGallery/ImageGallery' // 사진첩
-import Calendar from '@components/sections/calendars/Calendar' // 캘린더
-import Map from '@components/sections/maps/Map' // 지도 (오시는 길)
-import Contact from '@components/sections/contacts/Contact' // 연락처 및 마음전하기
-import Share from '@components/sections/shares/Share' // 공유하기
-
-// 반드시 받아야되는 데이터 Modal을 위한 컴포넌트 (필수요소를 위한 모달)
-import RequiredModal from '@components/RequiredModal'
-
-const cx = classNames.bind(styles)
+import Type001 from './pages/Type001'
 
 function App() {
   // wedding 데이터 useState
-  const [wedding, setWedding] = useState<Wedding | null>(null)
+  const [data, setData] = useState<any | null>(null)
 
   // 현재 로딩중인지 아닌지 체크하기 위한 state
   const [loading, setLoading] = useState(false)
 
   // 에러 대응을 위한 state
   const [error, setError] = useState(false)
+
+  // 요청한 초대장 불러오기
+  const invitNo = new URLSearchParams(window.location.search).get('invitNo')
 
   //  wedding 데이터 호출 ([]가 비어있기 마운트 될때만 실행 (처음 만 실행))
 
@@ -45,7 +27,7 @@ function App() {
   useEffect(() => {
     setLoading(true) // 로딩 시작
     // callback, promise, async/await
-    fetch('http://localhost:8888/wedding')
+    fetch('http://localhost:8888/invitation/' + invitNo)
       .then((response) => {
         // 에러처리
         if (response.ok === false) {
@@ -56,7 +38,7 @@ function App() {
       })
       .then((data) => {
         // wedding state에 값넣어주기
-        setWedding(data)
+        setData(data)
         setLoading(false) // 로딩 끝
       })
       .catch((e) => {
@@ -81,40 +63,18 @@ function App() {
   }
 
   // 청첩장 데이터가 없을 경우 null 리턴
-  if (wedding == null) {
+  if (data == null) {
     return null
   }
 
-  // 청첩장 데이터 뽑아서 넣기 위한 코드
-  const {
-    date,
-    galleryImages,
-    groom,
-    bride,
-    location,
-    message: { intro, invitation },
-  } = wedding
-
-  return (
-    <div className={cx('container')}>
-      <Heading date={date} />
-      <Video />
-      <Intro
-        groomName={groom.name}
-        brideName={bride.name}
-        locationName={location.name}
-        date={date}
-        message={intro}
-      />
-      <Invitation message={invitation} />
-      <ImageGallery images={galleryImages} />
-      <Calendar date={date} />
-      <Map location={location} />
-      <Contact groom={groom} bride={bride} />
-      <Share groomName={groom.name} brideName={bride.name} date={date} />
-      <RequiredModal wedding={wedding} />
-    </div>
-  )
+  switch (data.type) {
+    case 'Type001':
+      return <Type001 wedding={data} />
+      break
+    default:
+      return <FullScreenMessage type="error" />
+      break
+  }
 }
 
 export default App

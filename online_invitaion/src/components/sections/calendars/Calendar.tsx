@@ -10,7 +10,7 @@ import styles from './Calendar.module.scss'
 const cx = classNames.bind(styles)
 
 function Calendar({ date }: { date: string }) {
-  const weddingDate = parseISO(date)
+  const inviteDate = parseISO(date)
 
   const css = `
   .rdp-caption{
@@ -37,10 +37,10 @@ function Calendar({ date }: { date: string }) {
       title={
         <div className={cx('wrap-header')}>
           <span className={cx('txt-date')}>
-            {format(weddingDate, 'yyyy.MM.dd')}
+            {format(inviteDate, 'yyyy.MM.dd')}
           </span>
           <span className={cx('txt-time')}>
-            {format(weddingDate, 'aaa h시 eeee', { locale: ko })}
+            {format(inviteDate, 'aaa h시 eeee', { locale: ko })}
           </span>
         </div>
       }
@@ -49,8 +49,8 @@ function Calendar({ date }: { date: string }) {
         <style>{css}</style>
         <DayPicker
           locale={ko}
-          month={weddingDate}
-          selected={weddingDate}
+          month={inviteDate}
+          selected={inviteDate}
           formatters={{ formatCaption: () => '' }}
         />
       </div>
