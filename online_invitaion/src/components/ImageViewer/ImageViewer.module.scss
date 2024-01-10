@@ -1,20 +1,10 @@
-.dimmed{
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #000;
-    z-index: 9999;
-
-    .ico-close{
-        width: 20px;
-        height: 20px;
-        fill: #fff;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-        z-index: 2; // swiper slide가 기본 z-index 1이라서
-        cursor: pointer;
-    }
+.ico-close{
+    width: 20px;
+    height: 20px;
+    fill: #fff;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 2; // swiper slide가 기본 z-index 1이라서
+    cursor: pointer;
 }

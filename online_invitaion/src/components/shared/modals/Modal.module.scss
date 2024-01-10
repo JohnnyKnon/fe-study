@@ -1,0 +1,54 @@
+// 변수
+@import "@scss/variable.scss";
+
+// Type001 모달 전체 wrapper
+.Type001-wrap-modal{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    z-index: $modal-zindex;
+
+    // 타이틀&컨텐츠 영역 wrapper
+    .Type001-wrap-body{
+        width: 320px;
+
+        //컨텐츠 영역
+        .Type001-wrap-content{
+            padding: 18px;
+
+            // 타이틀
+            .Type001-txt-title{
+                font-size: 20px;
+                font-weight: bold;
+                margin-bottom: 18px;
+            }
+        }
+
+        // 버튼 wrapper
+        .Type001-wrap-buttons{
+            display: flex;
+
+            // 버튼 전체 스타일링
+            button{
+                flex: 1;
+                font-size: 17px;
+                padding: 15px 28px;
+                font-weight: bold;
+                cursor: pointer;
+            }
+            // 왼쪽 버튼
+            button:nth-child(1){
+                background-color: var(--beige);
+            }
+            // 오른쪽 버튼
+            button:nth-child(2){
+                background-color: var(--black);
+                color: #fff;
+            }
+        }
+    }
+}
