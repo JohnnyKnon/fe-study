@@ -1,13 +1,8 @@
-import classNames from 'classnames/bind'
-import Section from '@/components/shared/sections/Section'
-import styles from './ImageGallery.module.scss'
-
 import ImageViewer from '../../ImageViewer'
 import { useState } from 'react'
+import ImageGalleryType001 from './Type001/ImageGalleryType001'
 
-const cx = classNames.bind(styles)
-
-function ImageGallery({ images }: { images: string[] }) {
+function ImageGallery({ images, type }: { images: string[]; type: string }) {
   // 클릭한 이미지의 인덱스를 보관할 상태
   const [selectedIdx, setSelectedIdx] = useState(-1)
 
@@ -25,25 +20,11 @@ function ImageGallery({ images }: { images: string[] }) {
 
   return (
     <>
-      <Section title="사진첩">
-        <ul className={cx('wrap-images')}>
-          {/* index를 사용하는건 좋지 않지만 유동적으로 변경되는 값이 아니기에 일단 이렇게 처리 */}
-          {images.map((src, idx) => (
-            <li
-              key={idx}
-              className={cx('wrap-image')}
-              onClick={() => {
-                handleSelectedImage(idx)
-              }}
-            >
-              <picture>
-                <source srcSet={`${src}.webp`} type="image/webp" />
-                <img src={`${src}.jpg`} alt="이미지" />
-              </picture>
-            </li>
-          ))}
-        </ul>
-      </Section>
+      <CallTypeImageGallery
+        images={images}
+        type={type}
+        handleSelectedImage={handleSelectedImage}
+      />
       <ImageViewer
         images={images}
         open={open}
@@ -52,6 +33,30 @@ function ImageGallery({ images }: { images: string[] }) {
       />
     </>
   )
+}
+
+function CallTypeImageGallery({
+  images,
+  type,
+  handleSelectedImage,
+}: {
+  images: string[]
+  type: string
+  handleSelectedImage: (idx: number) => void
+}) {
+  switch (type) {
+    case 'Type001':
+      return (
+        <ImageGalleryType001
+          images={images}
+          handleSelectedImage={handleSelectedImage}
+        />
+      )
+      break
+    default:
+      return null
+      break
+  }
 }
 
 export default ImageGallery

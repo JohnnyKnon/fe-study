@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 // 공통적으로 들어가는 풀스크린메세지
 import FullScreenMessage from '@shared/commons/FullScreenMessage'
-import Type001 from './pages/Type001'
+import Type001 from './invitationType/Type001'
 
 function App() {
   // wedding 데이터 useState

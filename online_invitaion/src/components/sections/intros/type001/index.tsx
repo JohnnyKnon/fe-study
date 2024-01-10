@@ -16,7 +16,7 @@ interface IntroProps {
   message: string
 }
 
-function Intro({
+function IntroType001({
   groomName,
   brideName,
   date,
@@ -72,4 +72,4 @@ function IconFlower({ className }: { className: string }) {
   )
 }
 
-export default Intro
+export default IntroType001

@@ -1,10 +1,10 @@
 import { useEffect, useRef } from 'react'
-import { Location } from '@models/wedding'
+import { Location } from '@/models/invitation'
 import classNames from 'classnames/bind'
 import styles from './Map.module.scss'
 
 // 타입에 따른 컴포넌트
-import MapType001 from './type/MapType001'
+import MapType001 from './types/type001/MapType001'
 
 const cx = classNames.bind(styles)
 

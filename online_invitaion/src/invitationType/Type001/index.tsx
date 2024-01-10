@@ -3,12 +3,12 @@ import classNames from 'classnames/bind'
 import styles from './Type001.module.scss'
 
 // 타입
-import { Wedding } from '@models/wedding'
+import { Wedding } from '@/models/invitation'
 
 // 컴포넌트
 import Heading from '@components/sections/headers/Heading' // 상단 헤딩
-import Video from '@components/sections/videos/Video' // 비디오 섹션
-import Intro from '@components/sections/intros/Intro' // 상단 간략 소개글
+import Video from '@components/sections/videos/Type001' // 비디오 섹션
+import Intro from '@components/sections/intros/type001' // 상단 간략 소개글
 import Invitation from '@components/sections/contents/Invitation' // 초대글
 import ImageGallery from '@components/sections/imageGallery/ImageGallery' // 사진첩
 import Calendar from '@components/sections/calendars/Calendar' // 캘린더
@@ -41,7 +41,7 @@ function Type001({ wedding }: { wedding: Wedding }) {
         message={intro}
       />
       <Invitation message={invitation} />
-      <ImageGallery images={galleryImages} />
+      <ImageGallery images={galleryImages} type="Type001" />
       <Calendar date={date} />
       <Map location={location} type="Type001" />
       <Contact groom={groom} bride={bride} />

@@ -1,7 +1,7 @@
 import classNames from 'classnames/bind'
 import Section from '@/components/shared/sections/Section'
 import styles from './MapType001.module.scss'
-import { Location } from '@models/wedding'
+import { Location } from '@/models/invitation'
 import { MutableRefObject } from 'react'
 
 const cx = classNames.bind(styles)
