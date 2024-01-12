@@ -4,4 +4,4 @@
 
 1. 모바일 초대장
 -> 개선 부분: 단일 스타일 초대장을 복수 스타일 초대장으로, 기능적인 부분은 하나의 컴포넌트에서 관리하고 UI는 Type 폴더로 관리하면서, 타입에 맞춘 컴포넌트로 관리 하는 형태로 작업 <br/>
-자세한 내용은 online_invitation 프로젝트 폴더 내부 README 참고 해주세요.
+자세한 내용은 <a href="https://github.com/JohnnyKnon/fe-study/tree/main/online_invitaion">online_invitation</a> 프로젝트 폴더 내부 README 참고 해주세요.
