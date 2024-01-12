@@ -57,6 +57,8 @@ API를 만들 수 있습니다.
 [Json Server Github]
 https://github.com/typicode/json-server
 
+# 프로젝트 실행 & DB 실행 방법
+
 프로젝트 install
 ### `yarn install`
 
