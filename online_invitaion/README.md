@@ -12,10 +12,10 @@
 
 ## 프로젝트 환경구성
 
-Bolierplate -> Create React App + TypeScript 입니다.
-Rules -> ESLint와 Prettier 입니다.
-Style -> SCSS 로 클래스 형태로 스타일을 작성할 예정입니다.
-Package Manager -> Yarn Berry (with pnp) 입니다.
+Bolierplate -> Create React App + TypeScript 입니다.<br/>
+Rules -> ESLint와 Prettier 입니다.<br/>
+Style -> SCSS 로 클래스 형태로 스타일을 작성할 예정입니다.<br/>
+Package Manager -> Yarn Berry (with pnp) 입니다.<br/>
 
 ## Why yarn ?
 
