@@ -17,6 +17,18 @@ Rules -> ESLint와 Prettier 입니다.<br/>
 Style -> SCSS 로 클래스 형태로 스타일을 작성할 예정입니다.<br/>
 Package Manager -> Yarn Berry (with pnp) 입니다.<br/>
 
+## 프로젝트 파일구성
+src/ <br/>
+assets -> font 파일 관리 <br/>
+components -> 컴포넌트 파일 관리 <br/>
+1. ImageViewer : 이미지 뷰어 컴포넌트 파일 <br/>
+2. sections : 캘린더, 연락처/송금, 최상단 헤딩, 비디오 섹션, 인트로(소개글), 초대글, 지도, 공유와 같은 <br/>
+실제 초대장을 구성하는 섹션파일이 존재하면 각 세션파일 내부 Types 폴더 혹은 자체 Type 파일을 넣어두어서 <br/>
+타입에 따라서 재구성할 수 있게 작업해둠 <br/>
+3. shared : 모든 파일에서 공통으로 사용하거나, 타입끼리 공유해서 사용할 수 있는 UI를 저장해두는 폴더 <br/>
+4. models: TS 타입들을 모아두는 폴더, 현재는 초대장 타입이 하나밖에 없어서 타입이 몇개 없습니다. <br/>
+5. scss : 공통으로 사용되거나 utils 같이 CSS 기능적으로 공유될 수 있는 스타일 관리 폴더
+
 ## Why yarn ?
 
 여기서 yarn 을 사용하는 이유는 우선 npm 의 단점을 먼저 설명드리려고합니다.
