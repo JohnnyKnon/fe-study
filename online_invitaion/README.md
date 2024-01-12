@@ -2,6 +2,10 @@
 
 패스트캠퍼스를 통한 프로젝트 견문을 넓히기 위한 공부 part1. 모바일 청첩장입니다.
 
+# 단순 클론코딩? No!!
+패스트 캠퍼스를 통해서 배운내용을 토대로 만들어보고 한가지 스타일 밖에없는 기존 코드를 기능코드와 UI코드를 나누어서
+복수의 스타일로 DB에 값이 저장되며, 모바일 초대장 솔루션 형태로 재개발 진행
+
 우선 간단하게 프로젝트 소개부터 하고 넘어가겠습니다.
 
 일단 사용하는 스팩을 먼저 말씀드리겠습니다.
@@ -53,49 +57,15 @@ API를 만들 수 있습니다.
 [Json Server Github]
 https://github.com/typicode/json-server
 
-# Getting Started with Create React App
+프로젝트 install
+### `yarn install`
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
+프로젝트 실행 방법:
 
 ### `yarn start`
 
 Runs the app in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Json Server 실행방법:
+### `yarn dev:db`
